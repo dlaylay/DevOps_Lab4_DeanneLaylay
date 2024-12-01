@@ -46,6 +46,11 @@ jobs:
     inputs:
       PublishSymbols: false
       SymbolServerType: TeamServices
+  - task: NuGetCommand@2
+    displayName: NuGet push
+    inputs:
+      command: push
+      feedPublish: 4d911514-144d-48df-80a1-64685e417083/8bcabf0b-7a9c-4701-ae8b-d1273b32b4a4
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifact
     condition: succeededOrFailed()
